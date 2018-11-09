@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-09 11:46:15
+Date: 2018-11-09 15:57:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -46,7 +46,7 @@ INSERT INTO `md_admin_menu` VALUES ('2', '1', '1', '1', '10000', 'admin', 'Hook'
 INSERT INTO `md_admin_menu` VALUES ('3', '2', '1', '0', '10000', 'admin', 'Hook', 'plugins', '', '钩子插件管理', '', '钩子插件管理');
 INSERT INTO `md_admin_menu` VALUES ('4', '2', '2', '0', '10000', 'admin', 'Hook', 'pluginListOrder', '', '钩子插件排序', '', '钩子插件排序');
 INSERT INTO `md_admin_menu` VALUES ('5', '2', '1', '0', '10000', 'admin', 'Hook', 'sync', '', '同步钩子', '', '同步钩子');
-INSERT INTO `md_admin_menu` VALUES ('6', '0', '0', '0', '0', 'admin', 'Setting', 'default', '', '设置', 'cogs', '系统设置入口');
+INSERT INTO `md_admin_menu` VALUES ('6', '0', '0', '1', '0', 'admin', 'Setting', 'default', '', '设置', 'cogs', '系统设置入口');
 INSERT INTO `md_admin_menu` VALUES ('7', '6', '1', '1', '50', 'admin', 'Link', 'index', '', '友情链接', '', '友情链接管理');
 INSERT INTO `md_admin_menu` VALUES ('8', '7', '1', '0', '10000', 'admin', 'Link', 'add', '', '添加友情链接', '', '添加友情链接');
 INSERT INTO `md_admin_menu` VALUES ('9', '7', '2', '0', '10000', 'admin', 'Link', 'addPost', '', '添加友情链接提交保存', '', '添加友情链接提交保存');
@@ -641,12 +641,15 @@ CREATE TABLE `md_option` (
   `option_value` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '配置值',
   PRIMARY KEY (`id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='全站配置表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT COMMENT='全站配置表';
 
 -- ----------------------------
 -- Records of md_option
 -- ----------------------------
-INSERT INTO `md_option` VALUES ('1', '1', 'site_info', '{\"site_name\":\"\\u6a21\\u578b\\u5e93\\u7ba1\\u7406\",\"site_seo_title\":\"\\u6a21\\u578b\\u5e93\\u7ba1\\u7406\",\"site_seo_keywords\":\"\\u6a21\\u578b\\u5e93\\u7ba1\\u7406\",\"site_seo_description\":\"\\u6a21\\u578b\\u5e93\\u7ba1\\u7406\"}');
+INSERT INTO `md_option` VALUES ('1', '1', 'site_info', '{\"site_name\":\"\\u6587\\u4ef6\\u7ba1\\u7406\",\"site_seo_title\":\"\\u6a21\\u578b\\u5e93\\u7ba1\\u7406\",\"site_seo_keywords\":\"\\u6a21\\u578b\\u5e93\\u7ba1\\u7406\",\"site_seo_description\":\"\\u6a21\\u578b\\u5e93\\u7ba1\\u7406\",\"site_icp\":\"\",\"site_admin_email\":\"\",\"site_analytics\":\"\",\"urlmode\":\"1\",\"html_suffix\":\"\"}');
+INSERT INTO `md_option` VALUES ('2', '1', 'cmf_settings', '{\"open_registration\":\"0\",\"banned_usernames\":\"\"}');
+INSERT INTO `md_option` VALUES ('3', '1', 'cdn_settings', '{\"cdn_static_root\":\"\"}');
+INSERT INTO `md_option` VALUES ('4', '1', 'admin_settings', '{\"admin_password\":\"\",\"admin_style\":\"flatadmin\"}');
 
 -- ----------------------------
 -- Table structure for md_plugin
